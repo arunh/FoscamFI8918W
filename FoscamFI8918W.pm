@@ -29,7 +29,7 @@
 # protocol
 #
 
-package ZoneMinder::Control::FoscamFI8918W_UserAgent;
+package MyAgent;
 
 use base 'LWP::UserAgent';
 
@@ -103,9 +103,9 @@ sub open
  
 	$self->loadMonitor();
  
-	$self->{ua} = ZoneMinder::Control::FoscamFI8918W_UserAgent->new;
+	$self->{ua} = MyAgent->new;
 	$self->{ua}->set_control_device_string($self->{Monitor}->{ControlDevice});
-	$self->{ua}->agent( "ZoneMinder Control Agent/".ZM_VERSION );
+	$self->{ua}->agent( "ZoneMinder Control Agent/" );
  
 	$self->{state} = 'open';
 }
